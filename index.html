@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Panda ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.container{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+width:90%;
+max-width:500px;
+box-shadow:0 8px 30px rgba(0,0,0,0.2);
+z-index:10;
+animation:fadeIn 2s ease;
+}
+
+img{
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:50%;
+border:4px solid white;
+margin-bottom:15px;
+}
+
+h1{
+margin-bottom:15px;
+font-size:32px;
+}
+
+p{
+font-size:18px;
+line-height:1.7;
+margin-bottom:15px;
+}
+
+button{
+background:white;
+color:#ff4f7b;
+border:none;
+padding:14px 28px;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#secret{
+display:none;
+margin-top:20px;
+font-size:20px;
+animation:fadeIn 1s ease;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 10s linear infinite;
+opacity:0.8;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="YOUR_PHOTO_URL_HERE" alt="Panda">
+
+<h1>For My Panda ❤️</h1>
+
+<p>
+I know I've hurt you, and I'm truly sorry.
+</p>
+
+<p>
+I wasn't upset because of your calls or your phone.
+I was upset because I missed you.
+Sometimes I let my feelings come out the wrong way.
+</p>
+
+<p>
+You mean so much more to me than any argument.
+And if I could take away the sadness I caused, I would do it instantly.
+</p>
+
+<button onclick="showMessage()">
+Open My Heart 💌
+</button>
+
+<div id="secret">
+🥺 Panda,<br><br>
+I don't want to win arguments.<br>
+I want to keep you.<br><br>
+
+Thank you for being patient with me.<br>
+I love you today, tomorrow, and every day after. ❤️
+</div>
+
+</div>
+
+<script>
+function showMessage(){
+document.getElementById("secret").style.display="block";
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+heart.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+}
+
+setInterval(createHeart,400);
+</script>
+
+</body>
+</html>
